@@ -28,8 +28,16 @@ namespace ChallengesWithTestsMark8
 
         public double SumOfMinAndMax(IEnumerable<double> numbers)
         {
-            if (numbers == null) { return 0; }
-            return numbers.Min() + numbers.Max();
+            if (numbers == null)
+            {
+                return 0;
+            }
+            double sum = 0;
+            foreach (var num in numbers)
+            {
+                sum = numbers.Min() + numbers.Max();
+            }
+            return sum;
         }
 
         public int GetLengthOfShortestString(string str1, string str2)
