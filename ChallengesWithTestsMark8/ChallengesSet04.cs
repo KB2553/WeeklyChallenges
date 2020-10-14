@@ -47,19 +47,39 @@ namespace ChallengesWithTestsMark8
 
         public void ChangeBusinessNameTo_TrueCoders(Business biz)  
         {
-                biz.Name = "True Coders";
+                biz.Name = "TrueCoders";
         }
 
         public bool CouldFormTriangle(int sideLength1, int sideLength2, int sideLength3)
-        {
-                return (sideLength1 + sideLength2 > sideLength3);
+        {       
+
+                if(sideLength1 <= 0 || sideLength2 <= 0 || sideLength3 < 0)
+                {
+                    return false;
+                }
+
+                if(sideLength1 > sideLength2 && sideLength1 > sideLength3)
+                {
+                return sideLength1 > (sideLength2 + sideLength3);
+                }
+                if (sideLength2 > sideLength3 && sideLength2 > sideLength1)
+                {
+                    return sideLength2 > (sideLength3 + sideLength1);
+                }
+                if (sideLength3 > sideLength2 && sideLength3 > sideLength1)
+                {
+                    return sideLength3 > (sideLength2 + sideLength1);
+                }
+
+                return false;
         }
 
         public bool IsStringANumber(string input)
         {
                 try
-                {
-                    int numVal = Int32.Parse(input);
+                {   
+
+                    float numVal = float.Parse(input);
                     return true;
                 }
                 catch (FormatException e)
@@ -68,7 +88,7 @@ namespace ChallengesWithTestsMark8
                 }
 
                
-           }
+          }
 
         public bool MajorityOfElementsInArrayAreNull(object[] objs)
         {
